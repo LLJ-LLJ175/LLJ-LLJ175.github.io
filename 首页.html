@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>甘孜旅游</title>
+</head>
+
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <ul>
+                <span><b>甘孜之旅</b>&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+                <li><a name="首页"></a>
+                    <a href="首页.html">首页</a>
+                </li>
+                <li><a href="景在甘孜.html">景在甘孜</a></li>
+                <li><a href="食在甘孜.html">食在甘孜</a></li>
+                <li><a href="人文甘孜.html">人文甘孜</a></li>
+                <li><a href="旅游攻略.html">旅游攻略</a></li>
+            </ul>
+        </nav>
+    </header><br>
+
+
+    <!-- 主视觉区域 -->
+   <!-- 主视觉区域 - 轮播图 -->
+   <section class="hero">
+    <div class="slider">
+        <div class="slide">
+            <img src="甘孜风景照片有牛羊.jpg" alt="甘孜风景 1" title="1">
+        </div>
+        <div class="slide">
+            <img src="甘孜夏天美景图片.jpg" alt="甘孜风景 2">
+        </div>
+        <div class="slide">
+            <img src="甘孜秋天美景图片.jpg" alt="甘孜风景 3">
+        </div>
+        <div class="slide">
+            <img src="甘孜美景.jpg" alt="甘孜风景 4">
+        </div>
+    </div>
+    <div class="slider-controls">
+        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+        <span class="next" onclick="plusSlides(1)">&#10095;</span>
+    </div>
+</section><br><br>
+
+<!-- 添加JavaScript代码来实现自动轮播 -->
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // 自动轮播间隔时间（毫秒）
+    const autoSlideInterval = 2000; 
+    let autoSlideTimer = setInterval(() => {
+        plusSlides(1);
+    }, autoSlideInterval);
+
+    function plusSlides(n) {
+        clearInterval(autoSlideTimer);
+        slideIndex += n;
+        if (slideIndex > document.querySelectorAll('.slide').length) {
+            slideIndex = 1;
+        } else if (slideIndex < 1) {
+            slideIndex = document.querySelectorAll('.slide').length;
+        }
+        showSlides(slideIndex);
+        autoSlideTimer = setInterval(() => {
+            plusSlides(1);
+        }, autoSlideInterval);
+    }
+
+    function showSlides(n) {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        slides[n - 1].style.display = 'block';
+    }
+</script>
+
+    <!-- 板块区域 -->
+    <header>
+        <nav>
+            <ul>
+                <li>圣洁甘孜</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="sections">
+        <div class="section">
+            <img src="cultural.jpg" alt="宗教文化">
+            <h2>宗教文化</h2>
+            <p>聆听圣地梵音妙</p>
+        </div>
+        <div class="section">
+            <img src="food.jpg" alt="美食荟萃">
+            <h2>美食荟萃</h2>
+            <p>一口甘孜味悠长</p>
+        </div>
+        <div class="section">
+            <img src="nature.jpg" alt="自然风光">
+            <h2>自然风光</h2>
+            <p>观甘孜山河绮丽</p>
+        </div>
+    </section>
+   
+     <!-- 精彩推荐区域 -->
+     <header>
+        <nav>
+            <ul>
+                <li>精彩推荐</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="recommendations">
+        <div class="recommendation-container">
+            <div class="left-recommend">
+                <div class="image-container">
+                    <img src="recommend1.jpg" alt="精彩推荐1">
+                    <div class="text-overlay">
+                        <h3>泸定桥</h3>
+                        <p>铁索锁江铭史</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-recommends-group">
+                <div class="right-recommends">
+                    <div class="top-recommend">
+                        <div class="image-container">
+                            <img src="recommend2.jpg" alt="精彩推荐2">
+                            <div class="text-overlay">
+                                <h3>稻城亚丁</h3>
+                                <p>草甸雪山奇境</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-recommend">
+                        <div class="image-container">
+                            <img src="recommend3.jpg" alt="精彩推荐3">
+                            <div class="text-overlay">
+                                <h3>木格措</h3>
+                                <p>湖光藏韵圣措</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>关于甘孜</h3>
+                <p>康巴源起，雪峰傲立</p>
+                <p>信仰如磬，甘孜韵长&ensp;&ensp;&ensp;</p>
+            </div>
+            <div class="footer-left">
+                <h3>联系我们</h3>
+                <p>电话:025-12345678</p>
+                <p>邮箱:info@ganzitravel.com</p>
+            </div>
+        </div>
+        <p class="copyright">&copy;2025 甘孜旅游网. 版权所有</p>
+    </footer>
+
+</body>
+
+</html>

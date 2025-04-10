@@ -1,0 +1,587 @@
+/*全局*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 0 50px;
+    opacity: 0; /* 初始透明度为 0 */
+    animation: fadeIn 1s ease-in-out forwards; /* 添加淡入动画 */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 主视觉区域样式 - 轮播图 */
+.hero {
+  position: relative;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.recommend-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.left-recommend {
+    width: 50%;
+    height: auto;
+}
+
+.left-recommend img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.right-recommends {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-recommend,
+.bottom-recommend {
+    width: 100%;
+    height: 50%; /* 使右边上下两张图片各占一半高度 */
+}
+
+.top-recommend img,
+.bottom-recommend img {
+    width: 100%;
+    height: 100%; /* 让图片填充容器高度 */
+    object-fit: cover; /* 保持图片比例并覆盖容器 */
+    display: block;
+}
+
+/* 导航栏样式 */
+header {
+    background-color: rgba(0, 136, 255, 0.36);
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* 在 styles.css 中添加以下样式 */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* 悬停时文字颜色变为金色 */
+    background-color: rgba(255, 255, 255, 0.1); /* 悬停时背景颜色变浅 */
+    border-radius: 5px;
+}
+
+/* 主视觉区域样式 */
+.hero {
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+/* 板块区域样式 */
+.sections {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.section {
+    width: 30%;
+    text-align: center;
+}
+
+.section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* 精彩推荐区域样式 */
+
+.image-container {
+    position: relative;
+    display: inline-block; /* 或者可以根据需要设置为 block */
+}
+
+.image-container img {
+    width: 100%; /* 根据需要调整图片宽度 */
+    height: auto;
+    display: inline-block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* 文字颜色可以根据需要调整 */
+    font-size: 12px; /* 文字大小可以根据需要调整 */
+    font-weight: bold; /* 文字加粗 */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 添加半透明背景，让文字更清晰 */
+    padding: 10px; /* 添加内边距 */
+}
+
+.recommendations {
+    display: inline-block;
+    text-align:right;
+    padding: 50px 0;
+}
+
+.recommendation {
+    text-align:left;
+    display: inline-block;
+    width: 30%;
+    margin: 15px 0;
+}
+
+/* 新增样式，用于控制后两张图片整体的布局 */
+.right-recommends-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+/* 修改原有的.right-recommends样式，去除多余的宽度设置（因为已经在新容器中控制） */
+.right-recommends {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+/* 调整.recommendation-container的样式，使其更好地控制整体布局 */
+.recommendation-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.left-recommend {
+  width: 50%;
+  height: auto;
+}
+
+.recommendation img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+/*景在甘孜*/
+
+.景点-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .景点-item {
+    width: 250px;
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* 在 styles.css 中添加以下样式 */
+.景点-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.景点-item img:hover {
+    transform: scale(1.1); /* 悬停时图片放大 10% */
+}
+  
+
+/* 评论 */
+.container {
+    width: 80%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .comment-section {
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+  }
+
+  .comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comments-list li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .input-section {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+
+  #commentInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+
+  #sendButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #sendButton:hover {
+    background-color: #0056b3;
+  }
+
+  /* 地图 */
+  .comment-and-map-container {
+    display: inline-block;
+    width: 49%; /* 两个模块各占约50%宽度，根据需要调整 */
+    vertical-align: top; /* 顶部对齐 */
+}
+.map-section {
+    padding: 20px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.map-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 食在甘孜 */
+
+
+  /* 人文甘孜 */
+  .image-container {
+  position: relative;
+  display: inline-block; /* 或者可以根据需要设置为 block */
+}
+
+/* 主要内容区域 */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 图文分栏布局 */
+.column-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.humanity-image {
+  width: 400px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  display: block;
+}
+
+.humanity-text {
+  flex: 1;
+  font-size: 20px;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+/* 图片画廊 */
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.image-item {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+  transform: scale(1.03);
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-item:hover .image-caption {
+  opacity: 1;
+}
+
+
+
+/* 互动区域 */
+.red-army-spirit-interaction {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.red-army-spirit-interaction h2 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+#like-button {
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#like-button:hover {
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #34495e;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+
+/* 视频区域 */
+.ludingqiao-video-section {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-and-text {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+video {
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.ludingqiao-text {
+  font-size: 17px;
+  color: #4b5563;
+  line-height: 1.8;
+}
+  
+/* 页脚样式 */
+footer {
+    background-color: rgba(0, 136, 255, 0.36);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* 调整页脚内边距，使蓝色边框变窄 */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.footer-left {
+    text-align: left;
+    padding: 5px 20px; /* 调整页脚内容内边距 */
+}
+
+.footer-right {
+    text-align: right;
+    padding: 5px 20px;
+}
+
+.copyright {
+    padding: 10px;
+    border-top: 1px solid white;
+}
+
+.cover-fit {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

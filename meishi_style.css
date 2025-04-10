@@ -1,0 +1,197 @@
+h1{                         /* 设置标题“甘孜美食”的样式 */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: aqua;
+}
+
+
+
+/*全局*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 50px;
+  opacity: 0; /* 初始透明度为 0 */
+  animation: fadeIn 1s ease-in-out forwards; /* 添加淡入动画 */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.recommend-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.left-recommend {
+  width: 50%;
+  height: auto;
+}
+
+.left-recommend img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.right-recommends {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-recommend,
+.bottom-recommend {
+  width: 100%;
+  height: 50%; /* 使右边上下两张图片各占一半高度 */
+}
+
+.top-recommend img,
+.bottom-recommend img {
+  width: 100%;
+  height: 100%; /* 让图片填充容器高度 */
+  object-fit: cover; /* 保持图片比例并覆盖容器 */
+  display: block;
+}
+
+/* 导航栏样式 */
+header {
+  background-color: rgba(0, 136, 255, 0.36);
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+/* 在 styles.css 中添加以下样式 */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* 悬停时文字颜色变为金色 */
+  background-color: rgba(255, 255, 255, 0.1); /* 悬停时背景颜色变浅 */
+  border-radius: 5px;
+}
+
+/* 主视觉区域样式 */
+.hero {
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+/* 板块区域样式 */
+.sections {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+.section {
+  width: 30%;
+  text-align: center;
+}
+
+img {
+    width:100%;
+    height:50%;
+    object-fit:fill; /* 图片覆盖整个区域，保持比例 */
+}
+/* 全局样式 */
+.food-section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .food-category {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .food-item {
+    width: 30%;
+  }
+  
+  .food-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+/* 页脚样式 */
+footer {
+  background-color: rgba(0, 136, 255, 0.36);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px; /* 调整页脚内边距，使蓝色边框变窄 */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.footer-left {
+  text-align: left;
+  padding: 5px 20px; /* 调整页脚内容内边距 */
+}
+
+.footer-right {
+  text-align: right;
+  padding: 5px 20px;
+}
+
+.copyright {
+  padding: 10px;
+  border-top: 1px solid white;
+}
+
+.cover-fit {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}

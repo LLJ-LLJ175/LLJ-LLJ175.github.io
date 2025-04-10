@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人文甘孜</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <!-- 导航栏 -->
+ <header>
+  <nav>
+    <ul>
+      <span><b>甘孜之旅</b>&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+      <li><a name="首页"></a>
+        <a href="首页.html">首页</a>
+      </li>
+      <li><a href="景在甘孜.html">景在甘孜</a></li>
+      <li><a href="食在甘孜.html">食在甘孜</a></li>
+      <li><a href="人文甘孜.html">人文甘孜</a></li>
+      <li><a href="旅游攻略.html">旅游攻略</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+    <div class="image-container">
+      <img src="首页.jpg" alt="首页">
+  </div><br>
+  <main>
+    <section class="content-section">
+       <!-- 板块区域 -->
+    <header>
+      <nav>
+          <ul>
+              <li>甘孜的人文魅力</li>
+          </ul>
+      </nav>
+  </header><br>
+      <div class="column-container">
+        <img src="6.jpg" alt="相关图片" class="humanity-image">
+        <div class="humanity-text" >
+          <p>甘孜藏族自治州，位于四川省西部，康藏高原东南。这里拥有丰富多样的人文景观和深厚的文化底蕴。藏传佛教文化在此源远流长，承载着信仰的力量和历史的记忆。</p><br>
+          <p>甘孜的民俗风情同样独具特色，藏族的传统服饰色彩鲜艳、工艺精美，各类节庆活动如藏历新年、康定跑马山转山会等热闹非凡，充满了浓郁的民族气息，展现着甘孜人民的豪迈与热情。</p>
+        </div>
+      </div>
+    </section>
+
+       <!-- 板块区域 -->
+       <header>
+        <nav>
+            <ul>
+                <li>源远流长的文化</li>
+            </ul>
+        </nav>
+    </header><br>
+
+    <section class="image-gallery">
+      <div class="image-row">
+        <div class="image-item">
+          <img src="1.jpg" alt="甘孜寺庙">
+          <p class="image-caption">神圣寺庙，藏传文化魂。</p>
+        </div>
+        <div class="image-item">
+          <img src="2.jpg" alt="藏族服饰">
+          <p class="image-caption">多彩藏服，展康巴风情。</p>
+        </div>
+      </div>
+      <div class="image-row">
+        <div class="image-item">
+          <img src="4.jpg" alt="锅庄舞">
+          <p class="image-caption">围舞蹁跹，享康巴豪情。</p>
+        </div>
+        <div class="image-item">
+          <img src="3.jpg" alt="唐卡">
+          <p class="image-caption">彩缎画卷，绘佛国传奇。</p>
+        </div>
+      </div>
+    </section>
+    <section class="ludingqiao-video-section">
+      <h2>飞夺泸定桥</h2>
+      <div class="video-and-text">
+        <video width="640" height="360" controls>
+          <source src="5.mp4" type="video/mp4">
+          您的浏览器不支持视频播放。
+        </video>
+        <div class="ludingqiao-text">
+          <p>1935年5月29日，中央红军部队在四川省中西部强渡大渡河成功后，沿大渡河左岸北上，主力由安顺场沿大渡河右岸北上。红4团官兵在天下大雨的情况下，在崎岖陡峭的山路上跑步前进，一昼夜奔袭竟达240里，终于在5月29日凌晨6时许按时到达泸定桥西岸。第2连连长廖大珠等22人组织的突击梯队踏索夺桥，第3连跟着后面边冲边铺木板，随后红军后续部队紧跟而来，歼灭守敌，占领了泸定城。</p>
+          <p>飞夺泸定桥粉碎了国民党歼灭红军于大渡河以南的企图，打破了蒋介石妄图把红军变成第二个石达开的反革命迷梦，成为中国共产党长征时期的重要里程碑，为实现具有重大历史意义的红一、二、四方面军会合，最后北上陕北结束长征奠定了坚实的基础。</p>
+        </div>
+      </div>
+    </section>
+    <section class="red-army-spirit-interaction">
+      <h2>为长征精神点赞并留言</h2>
+      <button id="like-button">点赞</button>
+      <span id="like-count">0</span> 次点赞
+      <form id="message-form">
+        <label for="message">留言：</label>
+        <textarea id="message" name="message" rows="4" cols="50" placeholder="请输入你对长征精神的赞美言论"></textarea>
+        <input type="submit" value="提交留言">
+      </form>
+      <div id="message-list"></div>
+    </section>
+  </main>
+ <!-- 页脚 -->
+ <footer>
+  <div class="footer-content">
+    <div class="footer-left">
+      <h3>关于甘孜</h3>
+      <p>康巴源起，雪峰傲立</p>
+      <p>信仰如磬，甘孜韵长&ensp;&ensp;&ensp;</p>
+    </div>
+    <div class="footer-left">
+      <h3>联系我们</h3>
+      <p>电话:025-12345678</p>
+      <p>邮箱:info@ganzitravel.com</p>
+    </div>
+  </div>
+  <p class="copyright">&copy;2025 甘孜旅游网. 版权所有</p>
+</footer>
+</body>
+</html>
